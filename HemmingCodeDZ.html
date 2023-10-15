@@ -1,0 +1,30 @@
+<html>
+ <head>
+  <title>My Hemming Code</title>
+  <script>
+  function code(){
+	  let InptText = document.getElementById('inpMassage').value;
+	  
+	  InptText = InptText.split('');
+	  for (let i = 0; i < InptText.length;i++){
+		  InptText[i] = parseInt(InptText[i]);
+	  }
+	  let cb1=(InptText[0]+InptText[2]+InptText[3])%2;
+	  
+	  let cb2=(InptText[0]+InptText[1]+InptText[3])%2;
+	  
+	  let cb3=(InptText[1]+InptText[2]+InptText[3])%2;
+	  document.getElementById('outMassage').value = InptText.join('') + cb1 +cb2+ cb3;
+  }
+  </script>
+ </head>
+ <body>
+ <h1> Serd, Hemming Code </h>
+ <p><input type='text', id='inpMassage', value='1101' /> input message, 4 bits</p> 
+ <p><input type=button, value='code', onclick='code()' /></p>
+ <p><input type='text', id='outMassage' /> coded message</p>
+ <p><input type=button, value='Check' /></p>
+ <p><input type='text'/> original message</p>
+ 
+ </body>
+</html>
